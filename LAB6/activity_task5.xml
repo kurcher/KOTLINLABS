@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/chain_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/chain_btn2"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/chain_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/chain_btn1"
+        app:layout_constraintEnd_toStartOf="@id/chain_btn3"/>
+
+    <Button
+        android:id="@+id/chain_btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/chain_btn2"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дуже довгий текст"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chain_btn1"/>
+
+    <TextView
+        android:id="@+id/text_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Короткий"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_long"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="text_long, text_short" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Я під бар'єром"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/barrier_bottom"/>
+
+    <TextView
+        android:id="@+id/group_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Елемент групи 1"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/group_text2"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/group_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Елемент групи 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_elements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:constraint_referenced_ids="group_text1, group_text2" />
+
+    <ImageView
+        android:id="@+id/icon_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_compass"
+        app:layout_constraintCircle="@id/chain_btn2"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="135"
+        android:contentDescription="Іконка по колу" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

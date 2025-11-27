@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Центральний Елемент"
+        android:layout_centerInParent="true"
+        android:background="#FFEB3B"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btn_above"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_center"
+        android:layout_alignStart="@id/tv_center"
+        android:text="Вище"/>
+
+    <Button
+        android:id="@+id/btn_below"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_center"
+        android:layout_alignEnd="@id/tv_center"
+        android:text="Нижче"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/tv_center"
+        android:layout_centerVertical="true"
+        android:hint="Ліворуч"
+        android:inputType="text"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_center"
+        android:layout_centerVertical="true"
+        android:text="Праворуч"/>
+
+    <Button
+        android:id="@+id/btn_to_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Перемісти Мене"
+        android:backgroundTint="#F44336"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>
