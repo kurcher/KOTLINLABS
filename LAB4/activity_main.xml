@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/lastNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surname"
+        style="@style/MyLastNameStyle"
+        android:layout_marginBottom="24dp" />
+
+    <ImageView
+        android:id="@+id/shapeImageView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/my_shape"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="My XML Shape" />
+
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/flag"
+        android:scaleType="centerCrop"
+        android:contentDescription="National Flag"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/armsImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/emblem"
+        android:scaleType="fitCenter"
+        android:contentDescription="National Coat of Arms" />
+
+</LinearLayout>
