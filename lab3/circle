@@ -1,0 +1,25 @@
+import kotlin.math.PI
+
+class Circle(radius: Double) : Figure() {
+    private var _radius = radius
+
+    var radius: Double
+        get() = _radius
+        set(value) {
+            if (value <= 0) throw IllegalArgumentException("Радіус має бути додатнім")
+            _radius = value
+        }
+
+    init {
+        if (radius <= 0) throw IllegalArgumentException("Радіус має бути додатнім")
+    }
+
+    override fun area(): Double = PI * _radius * _radius
+
+    override fun perimeter(): Double = 2 * PI * _radius
+
+    override fun printInfo() {
+        println("Коло:")
+        println("Площа = ${"%.2f".format(area())}, Довжина кола = ${"%.2f".format(perimeter())}")
+    }
+}
