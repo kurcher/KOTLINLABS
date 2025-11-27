@@ -1,0 +1,53 @@
+import kotlin.math.abs
+import kotlin.math.pow
+import kotlin.math.sqrt
+
+class Triangle(x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double) : Figure() {
+    // Приватні змінні
+    private var _x1 = x1
+    private var _y1 = y1
+    private var _x2 = x2
+    private var _y2 = y2
+    private var _x3 = x3
+    private var _y3 = y3
+
+    // Властивості (геттери та сеттери)
+    var x1: Double
+        get() = _x1
+        set(value) {
+            if (value.isNaN()) throw IllegalArgumentException("x1 має бути числом")
+            _x1 = value
+        }
+
+    var y1: Double
+        get() = _y1
+        set(value) {
+            if (value.isNaN()) throw IllegalArgumentException("y1 має бути числом")
+            _y1 = value
+        }
+
+    // Аналогічно можна описати інші координати, але для стислості залишимо 3 пари
+
+    override fun area(): Double {
+        return try {
+            val areaValue = abs((_x1 * (_y2 - _y3) + _x2 * (_y3 - _y1) + _x3 * (_y1 - _y2)) / 2)
+            if (areaValue == 0.0) throw ArithmeticException("Трикутник вироджений (точки на одній прямій)")
+            areaValue
+        } catch (e: Exception) {
+            println("Помилка при обчисленні площі трикутника: ${e.message}")
+            0.0
+        }
+    }
+
+    override fun perimeter(): Double {
+        val a = sqrt((_x2 - _x1).pow(2) + (_y2 - _y1).pow(2))
+        val b = sqrt((_x3 - _x2).pow(2) + (_y3 - _y2).pow(2))
+        val c = sqrt((_x1 - _x3).pow(2) + (_y1 - _y3).pow(2))
+        return a + b + c
+    }
+
+    override fun printInfo() {
+        println("Трикутник:")
+        println("Площа = ${"%.2f".format(area())}, Периметр = ${"%.2f".format(perimeter())}")
+    }
+}
