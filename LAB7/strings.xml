@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lab 7 Adapters</string>
+
+    <string name="task_1_title">Завдання 1: ListView</string>
+    <string name="selected_item_prefix">Вибрано:</string>
+    <string name="no_item_selected">Нічого не вибрано</string>
+
+    <string name="task_2_title">Завдання 2: GridView (Табуляція Y = X²)</string>
+    <string name="hint_x_start">Початок (X)</string>
+    <string name="hint_x_end">Кінець (X)</string>
+    <string name="hint_step">Крок (H)</string>
+    <string name="button_calculate">Обчислити</string>
+    <string name="button_exit">Вихід</string>
+    <string name="input_error">Будь ласка, заповніть усі поля</string>
+</resources>
