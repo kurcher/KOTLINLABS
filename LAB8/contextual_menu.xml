@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/style_bold" android:title="Bold" android:showAsAction="never"/>
+    <item android:id="@+id/style_italic" android:title="Italic" android:showAsAction="never"/>
+    <item android:id="@+id/style_large" android:title="Large text" android:showAsAction="never"/>
+    <item android:id="@+id/style_reset" android:title="Reset" android:showAsAction="never"/>
+    <item android:id="@+id/style_toggle_bg" android:title="Toggle bg" android:showAsAction="never"/>
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- приклади варіантів перестановки -->
+    <item android:id="@+id/order_default" android:title="Порядок: За замовчуванням"/>
+    <item android:id="@+id/order_reverse" android:title="Порядок: Зворотний"/>
+    <item android:id="@+id/order_alphabet" android:title="Порядок: Алфавітний"/>
+    <item android:id="@+id/order_custom1" android:title="Порядок: Власний 1"/>
+    <item android:id="@+id/order_custom2" android:title="Порядок: Власний 2"/>
+</menu>
